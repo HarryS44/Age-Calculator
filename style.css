@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -14,10 +21,10 @@ main{
     position: relative;
     background-color: #fff;
     height: 60%;
-    width: 60%;
+    width: 50%;
     top: 20%;
     left: 20%;
-    border-radius: 10% 10% 25%;
+    border-radius: 5% 5% 25% 5%  ;
 }
 
 form {
@@ -29,7 +36,29 @@ form {
 
 .form-group {
   width: 20%;
-  
 }
 
+label{
+  font-style: italic;
+  color: hsl(0, 1%, 44%);
+}
+
+hr{
+  width: 80%;
+  display: inline;
+}
+
+.form-info-return{
+  margin: 2.5rem;
+}
+
+h1{
+  font-size: 5rem;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.purple{
+  color: rgb(132, 77, 255);
+}
 
