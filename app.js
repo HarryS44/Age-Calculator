@@ -3,7 +3,7 @@ const dayInput = $("#day");
 const monthInput = $("#month");
 const yearInput = $("#year");
 const submitBtn = $("#submit-btn");
-
+  const date = new Date();
 function checkForm() {
   if (dayInput.val() && monthInput.val() && yearInput.val()) {
     submitBtn.prop("disabled", false);
@@ -17,17 +17,14 @@ monthInput.on("input", checkForm);
 yearInput.on("input", checkForm);
 
 $("#form-data").submit(function (event) {
-  const date = new Date();
+
   event.preventDefault();
 
-  var day = dayInput.val();
-  var month = monthInput.val();
-  var year = yearInput.val();
+  const day = dayInput.val();
+  const month = monthInput.val();
+  const year = yearInput.val();
 
   $("#show-days").text(day);
-  $("#show-months").text(month);
+  $("#show-months").text((date.getMonth() + 1) - month);
   $("#show-years").text(date.getFullYear() - year);
-
-  // You can now use the retrieved data as needed
-  // For example, you can perform further actions or update the UI
 });
