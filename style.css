@@ -6,6 +6,7 @@
   font-family: "Poppins", sans-serif;
 }
 .attribution {
+  margin-top: 100vh; 
   font-size: 11px;
   text-align: center;
 }
@@ -17,15 +18,17 @@ body{
     background-color: #f0f0f0;
 }
 
-main{
-    position: relative;
-    background-color: #fff;
-    height: 60%;
-    width: 50%;
-    top: 20%;
-    left: 20%;
-    border-radius: 5% 5% 25% 5%  ;
+main {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  height: 60%;
+  width: 40%;
+  border-radius: 5% 5% 25% 5%;
 }
+
 
 form {
   display: flex;
@@ -43,11 +46,6 @@ label{
   color: hsl(0, 1%, 44%);
 }
 
-hr{
-  width: 80%;
-  display: inline;
-}
-
 .form-info-return{
   margin: 2.5rem;
 }
@@ -59,6 +57,15 @@ h1{
 }
 
 .purple{
-  color: rgb(132, 77, 255);
+  color: #844dff;
 }
 
+.seperation-line {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+button{
+  border-radius: 70%;
+}
