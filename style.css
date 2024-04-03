@@ -41,16 +41,27 @@ form {
   width: 20%;
 }
 
+.form-group > p{
+  color: red;
+  font-size: 0.6rem;
+}
+
+.hidden{
+  display: none;
+}
+
 label{
-  font-style: bold;
+  font-weight: 600;
   color: #716f6f;
 }
 
 input{
   max-width: 8rem;
   width: auto;
-  height: 2.5rem;
+  max-height: 2.5rem;
   font-size: 2rem;
+  border-radius: 10%;
+  border: 1px solid #716f6f;
 }
 
 .form-info-return{
