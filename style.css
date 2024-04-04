@@ -50,6 +50,10 @@ form {
   display: none;
 }
 
+.input-red-box {
+  border-color: #ff0000;
+}
+
 label{
   font-weight: 600;
   color: #716f6f;
@@ -62,6 +66,13 @@ input{
   font-size: 2rem;
   border-radius: 10%;
   border: 1px solid #716f6f;
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .form-info-return{
@@ -90,7 +101,8 @@ button{
   background-color: #844dff;
   border: none;
   border-radius: 70%;
-}
+  margin-right: 1rem;
+}  
 
 button:hover{
   background-color: #000;

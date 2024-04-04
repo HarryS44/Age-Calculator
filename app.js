@@ -1,40 +1,44 @@
-const dayInput = $("#day");
-const monthInput = $("#month");
-const yearInput = $("#year");
 const date = new Date();
 
 $("#day").on("input", testFunction);
 $("#month").on("input", testFunction);
 $("#year").on("input", testFunction);
 
-function error() {
-  $("#error-message").removeClass("hidden");
+function error(input) {
+  input.addClass("input-red-box");
+  input.parent().find(".error-message").removeClass("hidden");
   setTimeout(function () {
-    $("#error-message").addClass("hidden");
+    input.removeClass("input-red-box");
+    input.parent().find(".error-message").addClass("hidden");
   }, 1000);
 }
 
 function testFunction() {
-  const day = dayInput.val();
-  const month = monthInput.val();
-  const year = yearInput.val();
+  const day = parseInt($("#day").val());
+  const month = parseInt($("#month").val());
+  const year = parseInt($("#year").val());
 
   if (day <= 31) {
-    $("#show-days").text(day);
+    $("#show-days").text(day + date.getDate());
   } else {
-    error();
+    error($("#day"));
+    $("#show-days").text("- -");
   }
 
   if (month <= 12) {
-    $("#show-years").text(year);
+    $("#show-months").text(month - (date.getMonth() + 1));
   } else {
-    error();
+    error($("#month"));
+    $("#show-months").text("- -");
   }
 
-  $("#show-months").text(month);
-  $("#show-years").text(year);
+  const currentYear = new Date().getFullYear();
+  if (year <= currentYear) {
+    $("#show-years").text(date.getFullYear() - year);
+  } else {
+    error($("#year"));
+    $("#show-years").text("- -");
+  }
 }
 
-// $("#show-days").text(day);
-// $("#show-months").text((date.getMonth() + 1) - month);
-// $("#show-years").text(date.getFullYear() - year - 1);
+
