@@ -14,16 +14,16 @@ function testFunction() {
   // Check if the input values are valid
   if (day <= 31 && month <= 12 && year <= currentDate.getFullYear()) {
     // Create a Date object with the user's birthdate
-    const birthday = new Date(year, month - 1, day);
+    const birthday = new Date(year, month, day);
 
     // Calculate the user's age in years
     const years = currentDate.getFullYear() - birthday.getFullYear();
 
     // Calculate the number of months since the user's last birthday
-    const months = currentDate.getMonth() - birthday.getMonth();
+    const months = (currentDate.getMonth() - birthday.getMonth() + 12) % 12 + 1;
 
     // Calculate the number of days since the user's last birthday
-    const days = currentDate.getDate() - birthday.getDate();
+    const days = (currentDate.getDate() - birthday.getDate() + 31) % 31;
 
     // Display the calculated age, months, and days
     $("#show-years").text(years);
